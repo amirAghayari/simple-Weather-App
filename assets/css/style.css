@@ -87,3 +87,69 @@ body {
   box-shadow: 2px 2px 4px #93c9db;
   transform: translateY(-2px);
 }
+
+.data {
+  font-family: sans-serif;
+  display: grid;
+  grid-template-rows: 2fr 2fr 2fr;
+  justify-content: center;
+  /* gap: 2rem; */
+}
+
+.data-name {
+  font-size: 3.8rem;
+  color: #3b3f43;
+}
+
+.main-div {
+  display: grid;
+  justify-content: start;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  gap: 10rem;
+}
+
+.weather {
+  margin-top: 1.4rem;
+  font-size: 2rem;
+  color: #da7643;
+}
+
+.weather-temp {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.main-temp {
+  color: #963636;
+  font-size: 2.4rem;
+  margin-top: 1.2rem;
+}
+
+.min-max {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  font-size: 1.4rem;
+  color: #4b535c;
+}
+
+.wind-sun {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.wind-speed {
+  font-size: 1.4rem;
+  color: #053e76;
+}
+
+.sun {
+  color: #3b3f43;
+}
+
+.error {
+  font-size: 2.4rem;
+}

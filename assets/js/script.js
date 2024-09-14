@@ -23,25 +23,29 @@ const getWeather = () => {
         const setHours = dateSunSet.getHours().toString().padStart(2, "0");
         const setMinutes = dateSunSet.getMinutes().toString().padStart(2, "0");
         console.log(data);
-        result.innerHTML = `<div><h2>${data.name}</h2>
+        result.innerHTML = `<div class="main-div"><h2 class="data-name">${data.name}</h2>
         <h3 class="weather">${data.weather[0].description} </h3></div>
-        <img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png>"
-
-
-
-        <h2> temp : ${data.main.temp}&#175; </h2>
-        <div>
-        <h4>${data.main.temp_max}</h4>
-        <h4>${data.main.temp_min}</h4>
-        </div>
-        <h4>wind speed : ${data.wind.speed}</h4>
-        <h3>Sunrise : ${riseHourse}:${riseMinutes}</h3>
-        <h3>Sunset : ${setHours}:${setMinutes}</h3>
-        `;
+        
+        
+        <div class="weather-temp">
+        <h2 class="main-temp"> temp : ${data.main.temp}&#175; </h2>
+        <div class="min-max">
+        <h4> Max: ${data.main.temp_max}</h4>
+        <h4> Min: ${data.main.temp_min}</h4>
+        </div></div>
+        <div class="wind-sun">
+        <h4 class="wind-speed">wind speed : ${data.wind.speed}</h4>
+        <h3 class="sun">Sunrise : ${riseHourse}:${riseMinutes}</h3>
+        <h3 class="sun">Sunset : ${setHours}:${setMinutes}</h3>
+        </div>`;
       })
-      .catch(() => (result.innerHTML = `<h3> city not found </h3>`));
+      .catch(
+        () => (result.innerHTML = `<h3 class="error"> city not found </h3>`)
+      );
   }
 };
 
 window.addEventListener("load", getWeather);
 search.addEventListener("click", getWeather);
+
+// <img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png>"
