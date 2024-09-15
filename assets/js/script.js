@@ -23,15 +23,19 @@ const getWeather = () => {
         const setHours = dateSunSet.getHours().toString().padStart(2, "0");
         const setMinutes = dateSunSet.getMinutes().toString().padStart(2, "0");
         console.log(data);
-        result.innerHTML = `<div class="main-div"><h2 class="data-name">${data.name}</h2>
+        result.innerHTML = `<div class="main-div"><h2 class="data-name">${
+          data.name
+        }</h2>
         <h3 class="weather">${data.weather[0].description} </h3></div>
         
         
         <div class="weather-temp">
-        <h2 class="main-temp"> temp : ${data.main.temp}&#175; </h2>
+        <h2 class="main-temp"> temp : ${(+data.main.temp - 273).toFixed(
+          2
+        )}&#175; </h2>
         <div class="min-max">
-        <h4> Max: ${data.main.temp_max}</h4>
-        <h4> Min: ${data.main.temp_min}</h4>
+        <h4> Max: ${(+data.main.temp_max - 273).toFixed(2)}</h4>
+        <h4> Min: ${(+data.main.temp_min - 273).toFixed(2)}</h4>
         </div></div>
         <div class="wind-sun">
         <h4 class="wind-speed">wind speed : ${data.wind.speed}</h4>
